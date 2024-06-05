@@ -14,12 +14,11 @@ public class CourseService(IDbContextFactory<DataContext> contextFactory) : ICou
     public async Task<Course> CreateCourseAsync(CourseCreateRequest request)
     {
         await using var context = _contextFactory.CreateDbContext();
-
         var courseEntity = CourseFactory.CreateCourse(request);
         context.Courses.Add(courseEntity);
         await context.SaveChangesAsync();
-
         await context.DisposeAsync();
+
         return CourseFactory.CreateToModel(courseEntity);
 
     }
@@ -138,7 +137,6 @@ public class CourseService(IDbContextFactory<DataContext> contextFactory) : ICou
             }
         }
 
-        //context.Entry(existingCourse).CurrentValues.SetValues(updatedCourseEntity);
 
         await context.SaveChangesAsync();
         await context.DisposeAsync();

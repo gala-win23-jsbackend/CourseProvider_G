@@ -42,7 +42,7 @@ public static class CourseFactory
                 Includes = request.Content.Includes,
                 ProgramDetails = request.Content.ProgramDetails?.Select((programDetail, index) => new ProgramDetailEntity
                 {
-                    Id = index + 1, // Skapa ett unikt Id baserat på index
+                    Id = index + 1, 
                     Title = programDetail.Title,
                     Description = programDetail.Description
                 }).ToList()

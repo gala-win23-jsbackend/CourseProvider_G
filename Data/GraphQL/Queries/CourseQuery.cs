@@ -1,9 +1,7 @@
-﻿
-
-using Data.Models;
+﻿using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Cors.Infrastructure;
-namespace Data.GraphQL;
+namespace Data.GraphQL.Queries;
 
 public class CourseQuery(ICourseService courseService)
 {

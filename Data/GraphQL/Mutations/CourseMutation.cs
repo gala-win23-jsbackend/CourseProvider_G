@@ -3,7 +3,6 @@
 using Data.Entities;
 using Data.Models;
 using Data.Services;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 
 namespace Data.GraphQL.Mutations;
 
